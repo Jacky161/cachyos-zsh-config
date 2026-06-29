@@ -57,49 +57,19 @@ export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-#alias open="xdg-open"
-alias make="make -j`nproc`"
-alias ninja="ninja -j`nproc`"
-alias n="ninja"
-alias c="clear"
-alias rmpkg="sudo pacman -Rsn"
-alias cleanch="sudo pacman -Scc"
-alias fixpacman="sudo rm /var/lib/pacman/db.lck"
-alias update="sudo pacman -Syu"
-
-# Help people new to Arch
-alias apt="man pacman"
-alias apt-get="man pacman"
-alias please="sudo"
-alias tb="nc termbin.com 9999"
-
-# Cleanup orphaned packages
-cleanup() {
-  sudo pacman -Rsn $(pacman -Qtdq)
-}
-
-# Get the error messages from journalctl
-alias jctl="journalctl -p 3 -xb"
-
-# Recent installed packages
-alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
-
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
 # Fish-like syntax highlighting and autosuggestions
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Use history substring search
-source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 # pkgfile "command not found" handler
-source /usr/share/doc/pkgfile/command-not-found.zsh
+#source /usr/share/doc/pkgfile/command-not-found.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ${ZDOTDIR:-$HOME}/.p10k.zsh ]] || source ${ZDOTDIR:-$HOME}/.p10k.zsh
 
-export FZF_BASE=/usr/share/fzf
+#export FZF_BASE=/usr/share/fzf
